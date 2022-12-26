@@ -4,7 +4,7 @@ Area: terminal
 TOCTitle: Terminal Basics
 ContentId: 7B4DC928-2414-4FC7-9C76-E4A13D6675FE
 PageTitle: Integrated Terminal in Visual Studio Code
-DateApproved: 11/2/2022
+DateApproved: 12/7/2022
 MetaDescription: Visual Studio Code has an integrated terminal to enable working in your shell of choice without leaving the editor.
 ---
 # Terminal Basics
@@ -382,8 +382,8 @@ See the [GPU acceleration](/docs/terminal/appearance.md#gpu-acceleration) sectio
 
 This normally means that the program/shell running inside the terminal requested to turn on "bracketed paste mode" but something doesn't support it properly. To work around this, you could run `printf "\e[?2004l"` to disable it for that session or add the following to your `~/.inputrc` file:
 
-```bash
-bind 'set enable-bracketed-paste off'
+```
+set enable-bracketed-paste off
 ```
 
 ### Ctrl+A, Ctrl+R output ^A, ^R on zsh

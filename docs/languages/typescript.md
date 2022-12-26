@@ -4,7 +4,7 @@ Area: languages
 TOCTitle: TypeScript
 ContentId: 05C114DF-4FDC-4C65-8954-58F5F293FAFD
 PageTitle: TypeScript Programming with Visual Studio Code
-DateApproved: 11/2/2022
+DateApproved: 12/7/2022
 MetaDescription: Get the best out editing TypeScript with Visual Studio Code.
 MetaSocialImage: images/typescript/Languages_typescript.png
 ---
@@ -156,7 +156,7 @@ One of the simplest refactorings is to rename a method or variable. Press `kb(ed
 
 ## Debugging
 
-VS Code comes with great debugging support for TypeScript, including support for sourcemaps. Set breakpoints, inspect objects, navigate the call stack, and execute code in the Debug Console. See the [Debugging topic](/docs/editor/debugging.md) to learn more.
+VS Code comes with great debugging support for TypeScript, including support for sourcemaps. Set breakpoints, inspect objects, navigate the call stack, and execute code in the Debug Console. See [Debugging TypeScript](/docs/typescript/typescript-debugging.md) and the overall [Debugging topic](/docs/editor/debugging.md) to learn more.
 
 ### Debug client side
 

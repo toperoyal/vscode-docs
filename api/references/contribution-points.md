@@ -1,7 +1,7 @@
 ---
 # DO NOT TOUCH — Managed by doc writer
 ContentId: 2F27A240-8E36-4CC2-973C-9A1D8069F83F
-DateApproved: 11/2/2022
+DateApproved: 12/7/2022
 
 # Summarize the whole topic in less than 300 characters for SEO purpose
 MetaDescription: To extend Visual Studio Code, your extension (plug-in) declares which of the various Contribution Points it is using in its package.json Extension Manifest file.
@@ -440,11 +440,17 @@ In the settings UI, this is rendered as:
 
 ## contributes.configurationDefaults
 
-Contribute default language-specific editor configurations. This will override default editor configurations for the provided language.
+Contribute default values for other registered configurations and override their defaults.
 
-The following example contributes default editor configurations for the `markdown` language:
+The following example overrides the default behavior of `files.autoSave` setting to AutoSave files on focus change.
 
-### Configuration default example
+```json
+"configurationDefaults": {
+      "files.autoSave": "onFocusChange"
+}
+```
+
+You can also contribute default editor configurations for the provided language. For example, the following snippet contributes default editor configurations for the `markdown` language:
 
 ```json
 {
@@ -719,7 +725,7 @@ The main effects of `contributes.languages` are:
 
 - Define a `languageId` that can be reused in other parts of VS Code API, such as `vscode.TextDocument.getLanguageId()` and the `onLanguage` Activation Events.
   - You can contribute a human-readable using the `aliases` field. The first item in the list will be used as the human-readable label.
-- Associate file name extensions, file name patterns, files that begin with a specific line (such as hashbang), mimetypes to that `languageId`.
+- Associate file name extensions (`extensions`), file names (`filenames`), file name glob patterns (`filenamePatterns`), files that begin with a specific line (such as hashbang) (`firstLine`), and `mimetypes` to that `languageId`.
 - Contribute a set of [Declarative Language Features](/api/language-extensions/overview#declarative-language-features) for the contributed language. Learn more about the configurable editing features in the [Language Configuration Guide](/api/language-extensions/language-configuration-guide).
 - Contribute an icon which can be used as in file icon themes if theme does not contain an icon for the language
 
@@ -1408,7 +1414,7 @@ Contribute a view container into which [Custom views](#contributes.views) can be
 
 ## contributes.viewsWelcome
 
-Contribute welcome content to [Custom views](#contributes.views). Welcome content only applies to empty tree views. A view is considered empty if the tree has no children. By convention, any command links that are on a line by themselves are displayed as a button. You can specify the view that the welcome content should apply to with the `view` property. Visibility of the welcome content can be controlled with the `when` context value. The text to be displayed as the welcome content is set with the `contents` property.
+Contribute welcome content to [Custom views](#contributes.views). Welcome content only applies to empty tree views. A view is considered empty if the tree has no children and no `TreeView.message`. By convention, any command links that are on a line by themselves are displayed as a button. You can specify the view that the welcome content should apply to with the `view` property. Visibility of the welcome content can be controlled with the `when` context value. The text to be displayed as the welcome content is set with the `contents` property.
 
 ```json
 {
